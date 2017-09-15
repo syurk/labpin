@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block script %}
+<script type="text/javascript">
+   var stripe = Stripe('pk_test_juTAp75v01fW3mVZcz0jdylC');
+ var elements = stripe.elements();
+
+var card = elements.create('card', {
+  hidePostalCode: true,
+  style: {
+    base: {
+      iconColor: '#F99A52',
+      color: '#32315E',
+      lineHeight: '48px',
+      fontWeight: 400,
+      fontFamily: '"Helvetica Neue", "Helvetica", sans-serif',
+      fontSize: '15px',
+
+      '::placeholder': {
+        color: '#CFD7DF',
+      }
+    },
+  }
+});
+card.mount('#card-element');
+
+function setOutcome(result) {
+  var successElement = document.querySelector('.success');
+  var errorElement = document.querySelector('.error');
+  successElement.classList.remove('visible');
+  errorElement.classList.remove('visible');
+
+  if (result.token) {
+    // Use the token to create a charge or a customer
+    // https://stripe.com/docs/charges
+    successElement.querySelector('.token').textContent = result.token.id;
+    successElement.classList.add('visible');
+  } else if (result.error) {
+    errorElement.textContent = result.error.message;
+    errorElement.classList.add('visible');
+  }
+}
+
+card.on('change', function(event) {
+  setOutcome(event);
+});
+
+document.querySelector('form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = document.querySelector('form');
+  var extraDetails = {
+    name: form.querySelector('input[name=cardholder-name]').value,
+    address_zip: form.querySelector('input[name=address-zip]').value
+  };
+  stripe.createToken(card, extraDetails).then(setOutcome);
+});
+</script>
+{% endblock %}
+
+
+
+
+{% block content %}
+<<form action="/charge" method="post" id="payment-form">
+  <label>
+    <span>Name</span>
+    <input name="cardholder-name" class="field" placeholder="Jane Doe" />
+  </label>
+  <label>
+    <span>Phone</span>
+    <input class="field" placeholder="(123) 456-7890" type="tel" />
+  </label>
+  <label>
+    <span>ZIP code</span>
+    <input name="address-zip" class="field" placeholder="94110" />
+  </label>
+  <label>
+    <span>Card</span>
+    <div id="card-element" class="field"></div>
+  </label>
+  <button type="submit">Pay ${{ product.price }}</button>
+  <div class="outcome">
+    <div class="error" role="alert"></div>
+    <div class="success">
+      Success! Your Stripe token is <span class="token"></span>
+    </div>
+  </div>
+</form>
+
+{% endblock %}

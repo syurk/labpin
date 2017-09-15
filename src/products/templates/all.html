@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block link %}
+    <link href="{% static 'css/all_products.css' %}" rel="stylesheet">
+{% endblock %}
+ 
+{% block content %}
+
+{% for products in product %}
+	
+  <div class="container-fluid">
+    <div class="content-wrapper">	
+		<div class="item-container">	
+			<div class="container">	
+				<div class="col-md-12">
+					<div class="image col-md-6">
+            			<div id="carousel-custom" class="carousel slide" >
+            			    <div class="carousel-outer">
+            			        <div class="carousel-inner">
+									{% for img in products.images.all %}
+										{% if img.featured %}
+            			            <div class="item active">
+            			                <img src="/media/{{ img.image }}" />
+            			            </div>
+										{% endif %}
+									{% endfor %}
+								
+									{% for img in products.images.all %}
+										{% if not img.featured %}
+            			            <div class="item">
+            			                <img src="/media/{{ img.image }}" />
+            			            </div>
+										{% endif %}
+									{% endfor %}
+            			        </div>
+            			    </div>
+            			</div>
+        			</div>
+    
+					<div class="product-title">
+						<a href='{{ products.get_absolute_url }}'> <h3>{{ products.name }}</h3></a>
+					</div>
+		 			
+					<div class="product-desc">{{ products.short_description }}</div>
+					<hr>
+					<div class="product-price">${{ products.price }}</div>					
+					<hr>
+				</div>
+			</div> 
+		</div>
+	</div>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}
+
+
+
+ 

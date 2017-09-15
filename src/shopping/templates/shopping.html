@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load carton_tags %}
+
+{% block content %}
+<h1>Shopping Cart</h1>
+
+{% get_cart as cart %}
+
+    <table border="1"> 
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    {% for item in cart.items %}
+    <tr>
+        <td>{{ item.product }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.subtotal }}</td>
+    </tr>
+        {% endfor %}
+    </table>
+
+    Total: {{ cart.total }}
+    {% endblock %}
