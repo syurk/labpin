@@ -37,9 +37,10 @@ urlpatterns = [
     url(r'^product/(?P<slug>[\w-]+)/$', product_views.single, name='product'),
     #url(r'^product/$', product_views.single, name='product'),
     url(r'^checkout/(?P<slug>[\w-]+)/$', checkout_views.checkout, name='checkout'),
-    url(r'^charge/$', checkout_views.checkout, name='charged'),
+    url(r'^charge/$', checkout_views.checkout, name='charge'),
     url(r'^contact/$', contact_views.contact, name='contact'),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^payments/', include('djstripe.urls', namespace="djstripe")),
     #url(r'^shopping-cart/', include('shopping.urls')),
     #url(r'^shopping/$', shopping_views.shopping, name='shopping'),
 ]#+static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)

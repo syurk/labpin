@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'checkout',
     'stripe',
     'shopping',
+    'djstripe',
 ]
 
 MIDDLEWARE = [
@@ -192,3 +193,11 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 
 STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_SECRET_KEY", "pk_test_juTAp75v01fW3mVZcz0jdylC")
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "sk_test_AABeM6QpmhwE1GrXCLWc8pfO")
+
+STRIPE_LIVE_PUBLIC_KEY = os.environ.get("STRIPE_LIVE_PUBLIC_KEY", "pk_test_juTAp75v01fW3mVZcz0jdylC")
+STRIPE_LIVE_SECRET_KEY = os.environ.get("STRIPE_LIVE_SECRET_KEY", "sk_test_AABeM6QpmhwE1GrXCLWc8pfO")
+STRIPE_TEST_PUBLIC_KEY = os.environ.get("STRIPE_TEST_PUBLIC_KEY", "pk_test_juTAp75v01fW3mVZcz0jdylC")
+STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY", "sk_test_AABeM6QpmhwE1GrXCLWc8pfO")
+STRIPE_LIVE_MODE = False
+
+APPEND_SLASH=False
