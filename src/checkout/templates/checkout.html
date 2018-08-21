@@ -1,18 +1,61 @@
 {% extends 'base.html' %}
 
+{% block script %}
+    <script>
+        Stripe.setPublishableKey('{{ publishKey }}pk_test_oxFqwE33CrQpO4WJrGPXytwd');
+        function stripeResponseHandler(status, response) {
+            var $form = $('#payment-form');
+            if (response.error){
+                $form.find('.payment-errors').text(response.error.message);
+                $form.find('.submit').prop('disabled', false);
+            }else{
+                var token = response.id
+                $form.append($('<input type="hidden" name="stripeToken">').val(token));
+                $form.get(0).submit();
+            }
+        };
+    </script>
+{% endblock %}
 
+{% block jquery %}
+    $(function (){
+       var $form = $('#payment-form');
+       $form.submit(function(event){
+        $form.find('.submit').prop('disabled', true);
+         Stripe.card.createToken($form, stripeResponseHandler);
+        return false;
+       });
+    });
+{% endblock %}
 
 {% block content %}
-<form action="/charge" method="POST">
-  {% csrf_token %}
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_juTAp75v01fW3mVZcz0jdylC"
-    data-amount= {{product.price}}
-    data-name= {{product.name}}
-    data-description= {{product.description}}
-    data-image=
-    data-locale="auto">
-  </script>
-  </form>
+    <div class="row">
+       <div class="col-sm-6 col-sm-offset-3">
+          <form class="form" action="" method="post" id="payment-form">
+    {% csrf_token %}
+        <span class="payment-errors"></span>
+        <div class="form-row">
+            <label for="">
+                <span>Card Number</span>
+                <input class="form-control" type="text" size="20" data-stripe="number">
+            </label>
+        </div>
+        <div class="form-row">
+            <label for="">
+                <span>Expiration (MM/YY)</span>
+                <input type="text" size="2" data-stripe="exp_month">
+                <span>/</span>
+                <input type="text" size="2" datastripe="exp_year">
+            </label>
+        </div>
+        <div class="form-row">
+            <label for="">
+                <span>CVC</span>
+                <input type="text" size="4" data-stripe="cvc">
+            </label>
+        </div>
+        <input type="submit" class="btn btn-success submit" value="Submit payment">
+    </form>
+       </div>
+    </div>
 {% endblock %}
