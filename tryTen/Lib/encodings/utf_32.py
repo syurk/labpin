@@ -3,8 +3,8 @@ Python 'utf-32' Codec
 """
 import codecs, sys
 
-### Codec APIs
 
+### Codec APIs
 encode = codecs.utf_32_encode
 
 def decode(input, errors='strict'):

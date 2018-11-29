@@ -1,8 +1,8 @@
 __all__ = ['seqToKV', 'kvToSeq', 'dictToKV', 'kvToDict']
 
 from openid import oidutil
-
 import types
+
 
 class KVFormError(ValueError):
     pass

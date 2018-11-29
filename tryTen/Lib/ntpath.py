@@ -5,11 +5,12 @@ Instead of importing this module directly, import os and refer to this
 module as os.path.
 """
 
-import os
-import sys
-import stat
-import genericpath
 from genericpath import *
+import genericpath
+import os
+import stat
+import sys
+
 
 __all__ = ["normcase","isabs","join","splitdrive","split","splitext",
            "basename","dirname","commonprefix","getsize","getmtime",

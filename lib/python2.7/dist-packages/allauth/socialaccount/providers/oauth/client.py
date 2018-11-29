@@ -5,16 +5,13 @@ Inspired by:
     http://github.com/facebook/tornado/blob/master/tornado/auth.py
 """
 
-import requests
-
+from allauth.compat import parse_qsl, urlparse
+from allauth.utils import get_request_param
 from django.http import HttpResponseRedirect
 from django.utils.http import urlencode
 from django.utils.translation import gettext as _
-
+import requests
 from requests_oauthlib import OAuth1
-
-from allauth.compat import parse_qsl, urlparse
-from allauth.utils import get_request_param
 
 
 def get_token_prefix(url):

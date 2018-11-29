@@ -1,14 +1,33 @@
 from __future__ import absolute_import
+
 import datetime
 import logging
 import os
-import sys
-import socket
 from socket import error as SocketError, timeout as SocketTimeout
+import socket
+import sys
 import warnings
+
+from ._collections import HTTPHeaderDict
+from .exceptions import (
+    NewConnectionError,
+    ConnectTimeoutError,
+    SubjectAltNameWarning,
+    SystemTimeWarning,
+)
 from .packages import six
 from .packages.six.moves.http_client import HTTPConnection as _HTTPConnection
 from .packages.six.moves.http_client import HTTPException  # noqa: F401
+from .packages.ssl_match_hostname import match_hostname, CertificateError
+from .util import connection
+from .util.ssl_ import (
+    resolve_cert_reqs,
+    resolve_ssl_version,
+    assert_fingerprint,
+    create_urllib3_context,
+    ssl_wrap_socket
+)
+
 
 try:  # Compiled with SSL?
     import ssl
@@ -28,26 +47,10 @@ except NameError:  # Python 2:
         pass
 
 
-from .exceptions import (
-    NewConnectionError,
-    ConnectTimeoutError,
-    SubjectAltNameWarning,
-    SystemTimeWarning,
-)
-from .packages.ssl_match_hostname import match_hostname, CertificateError
-
-from .util.ssl_ import (
-    resolve_cert_reqs,
-    resolve_ssl_version,
-    assert_fingerprint,
-    create_urllib3_context,
-    ssl_wrap_socket
-)
 
 
-from .util import connection
 
-from ._collections import HTTPHeaderDict
+
 
 log = logging.getLogger(__name__)
 

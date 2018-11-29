@@ -1,7 +1,6 @@
-from django.utils.http import urlencode
-
 from allauth.compat import reverse, urlparse
 from allauth.socialaccount.providers.base import Provider, ProviderAccount
+from django.utils.http import urlencode
 
 from .utils import (
     AXAttribute,

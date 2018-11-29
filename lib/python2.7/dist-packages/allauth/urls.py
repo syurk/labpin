@@ -1,8 +1,6 @@
-from importlib import import_module
-
-from django.conf.urls import include, url
-
 from allauth.socialaccount import providers
+from django.conf.urls import include, url
+from importlib import import_module
 
 from . import app_settings
 

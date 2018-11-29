@@ -1,13 +1,11 @@
-import json
-
-from django.utils.http import urlencode
-
 from allauth.socialaccount.providers.oauth.client import OAuth
 from allauth.socialaccount.providers.oauth.views import (
     OAuthAdapter,
     OAuthCallbackView,
     OAuthLoginView,
 )
+from django.utils.http import urlencode
+import json
 
 from .provider import FlickrProvider
 

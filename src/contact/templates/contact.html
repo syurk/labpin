@@ -6,7 +6,8 @@
 <div class='row'>
 <div class='col-sm-6 col-sm-offset-3'>
 
-<h1> {{title}} </h1>
+<h1> {{title}} Us </h1>
+<p>LabPin is here to provide you with more information and answer any questions.<br> Please fill out the quick form and we will be in touch with you shortly.</p>
 {% if confirm_message %}
     <p> {{confirm_message}} </p>
 {% endif %}
@@ -15,7 +16,7 @@
     <!-- csrf_token makes the form more secure -->
 <form method='POST' action=''> {% csrf_token %}
     {{ form|crispy }}
-    <input type='submit' value='submit form' class = 'btn btn-default' />
+    <button class="btn btn-success" type='submit'>Submit</button>
 </form>
 {% endif%}
 </div>

@@ -1,16 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import json
-import requests
+from allauth.account.utils import user_username
 from datetime import date, datetime
-
 import django
 from django.core.files.base import ContentFile
 from django.db import models
 from django.test import TestCase as DjangoTestCase
-
-from allauth.account.utils import user_username
+import json
+import requests
 
 from . import utils
 

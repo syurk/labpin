@@ -6,6 +6,7 @@
 
 import re
 
+
 XRI_AUTHORITIES = ['!', '=', '@', '+', '$', '(']
 
 try:

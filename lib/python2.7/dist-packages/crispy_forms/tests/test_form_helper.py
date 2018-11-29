@@ -1,27 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import re
-
-import django
-from django import forms
-from django.core.urlresolvers import reverse
-from django.forms.models import formset_factory
-try:
-    from django.middleware.csrf import _get_new_csrf_key
-except ImportError:
-    from django.middleware.csrf import _get_new_csrf_string as _get_new_csrf_key
-from django.template import (
-    TemplateSyntaxError, Context
-)
-
-import pytest
-
-from django.utils.translation import ugettext_lazy as _
-
-from .compatibility import get_template_from_string
-from .conftest import only_uni_form, only_bootstrap3, only_bootstrap4, only_bootstrap
-from .forms import TestForm, TestFormWithMedia
 from crispy_forms.bootstrap import (
     FieldWithButtons, PrependedAppendedText, AppendedText, PrependedText,
     StrictButton
@@ -31,8 +10,31 @@ from crispy_forms.helper import FormHelper, FormHelpersException
 from crispy_forms.layout import (
     Layout, Submit, Reset, Hidden, Button, MultiField, Field
 )
-from crispy_forms.utils import render_crispy_form
 from crispy_forms.templatetags.crispy_forms_tags import CrispyFormNode
+from crispy_forms.utils import render_crispy_form
+from django import forms
+import django
+from django.core.urlresolvers import reverse
+from django.forms.models import formset_factory
+from django.template import (
+    TemplateSyntaxError, Context
+)
+from django.utils.translation import ugettext_lazy as _
+import pytest
+import re
+
+from .compatibility import get_template_from_string
+from .conftest import only_uni_form, only_bootstrap3, only_bootstrap4, only_bootstrap
+from .forms import TestForm, TestFormWithMedia
+
+
+try:
+    from django.middleware.csrf import _get_new_csrf_key
+except ImportError:
+    from django.middleware.csrf import _get_new_csrf_string as _get_new_csrf_key
+
+
+
 
 
 def test_inputs(settings):

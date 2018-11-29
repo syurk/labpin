@@ -20,20 +20,21 @@ import socket
 import struct
 import warnings
 
-from .__version__ import __version__
 from . import certs
-# to_native_string is unused here, but imported here for backwards compatibility
+from .__version__ import __version__
 from ._internal_utils import to_native_string
-from .compat import parse_http_list as _parse_list_header
 from .compat import (
     quote, urlparse, bytes, str, OrderedDict, unquote, getproxies,
     proxy_bypass, urlunparse, basestring, integer_types, is_py3,
     proxy_bypass_environment, getproxies_environment)
+from .compat import parse_http_list as _parse_list_header
 from .cookies import cookiejar_from_dict
-from .structures import CaseInsensitiveDict
 from .exceptions import (
     InvalidURL, InvalidHeader, FileModeWarning, UnrewindableBodyError)
+from .structures import CaseInsensitiveDict
 
+
+# to_native_string is unused here, but imported here for backwards compatibility
 NETRC_FILES = ('.netrc', '_netrc')
 
 DEFAULT_CA_BUNDLE_PATH = certs.where()

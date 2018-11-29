@@ -7,6 +7,7 @@
 import _codecs_hk, codecs
 import _multibytecodec as mbc
 
+
 codec = _codecs_hk.getcodec('big5hkscs')
 
 class Codec(codecs.Codec):

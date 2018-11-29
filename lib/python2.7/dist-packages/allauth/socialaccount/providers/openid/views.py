@@ -1,12 +1,3 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
-
-from openid.consumer import consumer
-from openid.consumer.discover import DiscoveryFailure
-from openid.extensions.ax import AttrInfo, FetchRequest
-from openid.extensions.sreg import SRegRequest
-
 from allauth.compat import reverse
 from allauth.socialaccount import providers
 from allauth.socialaccount.app_settings import QUERY_EMAIL
@@ -15,6 +6,13 @@ from allauth.socialaccount.helpers import (
     render_authentication_error,
 )
 from allauth.socialaccount.models import SocialLogin
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+from openid.consumer import consumer
+from openid.consumer.discover import DiscoveryFailure
+from openid.extensions.ax import AttrInfo, FetchRequest
+from openid.extensions.sreg import SRegRequest
 
 from ..base import AuthError
 from .forms import LoginForm

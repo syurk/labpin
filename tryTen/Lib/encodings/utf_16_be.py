@@ -8,8 +8,8 @@ Written by Marc-Andre Lemburg (mal@lemburg.com).
 """
 import codecs
 
-### Codec APIs
 
+### Codec APIs
 encode = codecs.utf_16_be_encode
 
 def decode(input, errors='strict'):

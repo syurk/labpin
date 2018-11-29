@@ -1,5 +1,4 @@
 from json import loads, dumps
-
 from oauthlib.common import to_unicode
 
 

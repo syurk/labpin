@@ -1,11 +1,3 @@
-import hashlib
-import hmac
-import logging
-import requests
-from datetime import timedelta
-
-from django.utils import timezone
-
 from allauth.socialaccount import app_settings, providers
 from allauth.socialaccount.helpers import (
     complete_social_login,
@@ -17,6 +9,12 @@ from allauth.socialaccount.providers.oauth2.views import (
     OAuth2CallbackView,
     OAuth2LoginView,
 )
+from datetime import timedelta
+from django.utils import timezone
+import hashlib
+import hmac
+import logging
+import requests
 
 from .forms import FacebookConnectForm
 from .provider import GRAPH_API_URL, FacebookProvider

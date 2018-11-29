@@ -37,15 +37,17 @@ General notes on the underlying Mersenne Twister core generator:
 
 """
 
-from warnings import warn as _warn
-from types import MethodType as _MethodType, BuiltinMethodType as _BuiltinMethodType
+from _collections_abc import Set as _Set, Sequence as _Sequence
+import _random
+import bisect as _bisect
+from hashlib import sha512 as _sha512
+import itertools as _itertools
 from math import log as _log, exp as _exp, pi as _pi, e as _e, ceil as _ceil
 from math import sqrt as _sqrt, acos as _acos, cos as _cos, sin as _sin
 from os import urandom as _urandom
-from _collections_abc import Set as _Set, Sequence as _Sequence
-from hashlib import sha512 as _sha512
-import itertools as _itertools
-import bisect as _bisect
+from types import MethodType as _MethodType, BuiltinMethodType as _BuiltinMethodType
+from warnings import warn as _warn
+
 
 __all__ = ["Random","seed","random","uniform","randint","choice","sample",
            "randrange","shuffle","normalvariate","lognormvariate",
@@ -66,7 +68,6 @@ RECIP_BPF = 2**-BPF
 # Adrian Baddeley.  Adapted by Raymond Hettinger for use with
 # the Mersenne Twister  and os.urandom() core generators.
 
-import _random
 
 class Random(_random.Random):
     """Random number generator base class used by bound module functions.

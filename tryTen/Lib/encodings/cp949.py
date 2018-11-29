@@ -7,6 +7,7 @@
 import _codecs_kr, codecs
 import _multibytecodec as mbc
 
+
 codec = _codecs_kr.getcodec('cp949')
 
 class Codec(codecs.Codec):

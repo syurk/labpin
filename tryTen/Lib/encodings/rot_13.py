@@ -8,8 +8,8 @@ Written by Marc-Andre Lemburg (mal@lemburg.com).
 
 import codecs
 
-### Codec APIs
 
+### Codec APIs
 class Codec(codecs.Codec):
     def encode(self, input, errors='strict'):
         return (input.translate(rot13_map), len(input))

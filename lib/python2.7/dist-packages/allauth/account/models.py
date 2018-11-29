@@ -1,7 +1,6 @@
 from __future__ import unicode_literals
 
 import datetime
-
 from django.core import signing
 from django.db import models, transaction
 from django.utils import timezone

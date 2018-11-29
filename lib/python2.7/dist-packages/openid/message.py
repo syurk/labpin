@@ -5,11 +5,12 @@ __all__ = ['Message', 'NamespaceMap', 'no_default', 'registerNamespaceAlias',
            'IDENTIFIER_SELECT']
 
 import copy
-import warnings
-import urllib
-
-from openid import oidutil
 from openid import kvform
+from openid import oidutil
+import urllib
+import warnings
+
+
 try:
     ElementTree = oidutil.importElementTree()
 except ImportError:

@@ -1,12 +1,11 @@
-from django.contrib import messages
-from django.forms import ValidationError
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-
 from allauth.account import app_settings as account_settings
 from allauth.account.adapter import get_adapter as get_account_adapter
 from allauth.account.utils import complete_signup, perform_login, user_username
 from allauth.exceptions import ImmediateHttpResponse
+from django.contrib import messages
+from django.forms import ValidationError
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
 
 from . import app_settings, signals
 from ..compat import is_anonymous, is_authenticated, reverse

@@ -1,7 +1,8 @@
-import sys
-from types import MappingProxyType, DynamicClassAttribute
 from functools import reduce
 from operator import or_ as _or_
+import sys
+from types import MappingProxyType, DynamicClassAttribute
+
 
 # try _collections first to reduce startup cost
 try:

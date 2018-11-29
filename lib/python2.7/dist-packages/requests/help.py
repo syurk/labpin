@@ -1,15 +1,15 @@
 """Module containing bug report helper(s)."""
 from __future__ import print_function
 
+import chardet
 import json
 import platform
-import sys
 import ssl
-
+import sys
 import urllib3
-import chardet
 
 from . import __version__ as requests_version
+
 
 try:
     from .packages.urllib3.contrib import pyopenssl

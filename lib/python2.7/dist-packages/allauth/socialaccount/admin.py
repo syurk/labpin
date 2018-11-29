@@ -1,8 +1,7 @@
-import django
-from django import forms
-from django.contrib import admin
-
 from allauth.account.adapter import get_adapter
+from django import forms
+import django
+from django.contrib import admin
 
 from .models import SocialAccount, SocialApp, SocialToken
 

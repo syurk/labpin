@@ -1,10 +1,14 @@
 from __future__ import absolute_import
 
-import json
-import unittest
-import uuid
+from allauth.account.forms import BaseSignupForm
+from allauth.account.models import (
+    EmailAddress,
+    EmailConfirmation,
+    EmailConfirmationHMAC,
+)
+from allauth.tests import TestCase, patch
+from allauth.utils import get_user_model, get_username_max_length
 from datetime import timedelta
-
 import django
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser, AnonymousUser
@@ -15,15 +19,9 @@ from django.db import models
 from django.test.client import Client, RequestFactory
 from django.test.utils import override_settings
 from django.utils.timezone import now
-
-from allauth.account.forms import BaseSignupForm
-from allauth.account.models import (
-    EmailAddress,
-    EmailConfirmation,
-    EmailConfirmationHMAC,
-)
-from allauth.tests import TestCase, patch
-from allauth.utils import get_user_model, get_username_max_length
+import json
+import unittest
+import uuid
 
 from . import app_settings
 from ..compat import is_authenticated, reverse

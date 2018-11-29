@@ -23,6 +23,19 @@ Known Limitations:
 """
 from __future__ import absolute_import
 
+from socket import error as SocketError, timeout as SocketTimeout
+
+from ..connection import (
+    HTTPConnection, HTTPSConnection
+)
+from ..connectionpool import (
+    HTTPConnectionPool, HTTPSConnectionPool
+)
+from ..exceptions import ConnectTimeoutError, NewConnectionError
+from ..poolmanager import PoolManager
+from ..util.url import parse_url
+
+
 try:
     import socks
 except ImportError:
@@ -38,17 +51,7 @@ except ImportError:
     )
     raise
 
-from socket import error as SocketError, timeout as SocketTimeout
 
-from ..connection import (
-    HTTPConnection, HTTPSConnection
-)
-from ..connectionpool import (
-    HTTPConnectionPool, HTTPSConnectionPool
-)
-from ..exceptions import ConnectTimeoutError, NewConnectionError
-from ..poolmanager import PoolManager
-from ..util.url import parse_url
 
 try:
     import ssl

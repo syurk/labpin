@@ -10,18 +10,18 @@ also includes default encodings for all supported locale names.
 
 """
 
-import sys
+from builtins import str as _builtin_str
+import collections
 import encodings
 import encodings.aliases
-import re
-import collections
-from builtins import str as _builtin_str
 import functools
+import re
+import sys
+
 
 # Try importing the _locale module.
 #
 # If this fails, fall back on a basic 'C' locale emulation.
-
 # Yuck:  LC_MESSAGES is non-standard:  can't tell whether it exists before
 # trying the import.  So __all__ is also fiddled at the end of the file.
 __all__ = ["getlocale", "getdefaultlocale", "getpreferredencoding", "Error",

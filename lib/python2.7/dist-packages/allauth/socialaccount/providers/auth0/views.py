@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import requests
-
 from allauth.socialaccount import app_settings
 from allauth.socialaccount.providers.auth0.provider import Auth0Provider
 from allauth.socialaccount.providers.oauth2.views import (
@@ -8,6 +6,7 @@ from allauth.socialaccount.providers.oauth2.views import (
     OAuth2CallbackView,
     OAuth2LoginView,
 )
+import requests
 
 
 class Auth0OAuth2Adapter(OAuth2Adapter):

@@ -1,12 +1,10 @@
-import requests
-
-from django.utils.http import urlencode, urlquote
-
 from allauth.socialaccount.providers.oauth.views import (
     OAuthAdapter,
     OAuthCallbackView,
     OAuthLoginView,
 )
+from django.utils.http import urlencode, urlquote
+import requests
 
 from .provider import TrelloProvider
 

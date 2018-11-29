@@ -7,6 +7,7 @@
 import _codecs_cn, codecs
 import _multibytecodec as mbc
 
+
 codec = _codecs_cn.getcodec('hz')
 
 class Codec(codecs.Codec):

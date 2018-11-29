@@ -18,12 +18,11 @@ from _weakref import (
      ProxyType,
      ReferenceType,
      _remove_dead_weakref)
-
 from _weakrefset import WeakSet, _IterationGuard
-
 import collections  # Import after _weakref to avoid circular import.
-import sys
 import itertools
+import sys
+
 
 ProxyTypes = (ProxyType, CallableProxyType)
 

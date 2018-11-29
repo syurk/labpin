@@ -6,6 +6,7 @@ functions from this module themselves.
 import os
 import stat
 
+
 __all__ = ['commonprefix', 'exists', 'getatime', 'getctime', 'getmtime',
            'getsize', 'isdir', 'isfile', 'samefile', 'sameopenfile',
            'samestat']

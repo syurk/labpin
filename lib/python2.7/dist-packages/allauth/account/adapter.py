@@ -1,10 +1,5 @@
 from __future__ import unicode_literals
 
-import hashlib
-import json
-import time
-import warnings
-
 from django import forms
 from django.conf import settings
 from django.contrib import messages
@@ -24,6 +19,10 @@ from django.template import TemplateDoesNotExist
 from django.template.loader import render_to_string
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
+import hashlib
+import json
+import time
+import warnings
 
 from . import app_settings
 from ..compat import is_authenticated, reverse, validate_password

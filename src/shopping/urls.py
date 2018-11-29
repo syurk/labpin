@@ -1,5 +1,6 @@
-from shopping import views as shopping_views
 from django.conf.urls import url, include
+from shopping import views as shopping_views
+
 
 #urlpatterns = [
 #    url(r'^add/$', shopping_views.add, name='shopping-cart-add'),

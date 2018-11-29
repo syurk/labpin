@@ -1,6 +1,5 @@
 from collections import OrderedDict
 from datetime import timedelta
-
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash

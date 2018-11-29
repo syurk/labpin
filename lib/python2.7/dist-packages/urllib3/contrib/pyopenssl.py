@@ -47,9 +47,15 @@ import OpenSSL.SSL
 from cryptography import x509
 from cryptography.hazmat.backends.openssl import backend as openssl_backend
 from cryptography.hazmat.backends.openssl.x509 import _Certificate
-
-from socket import timeout, error as SocketError
 from io import BytesIO
+import logging
+import six
+from socket import timeout, error as SocketError
+import ssl
+import sys
+
+from .. import util
+
 
 try:  # Platform-specific: Python 2
     from socket import _fileobject
@@ -57,12 +63,7 @@ except ImportError:  # Platform-specific: Python 3
     _fileobject = None
     from ..packages.backports.makefile import backport_makefile
 
-import logging
-import ssl
-import six
-import sys
 
-from .. import util
 
 __all__ = ['inject_into_urllib3', 'extract_from_urllib3']
 

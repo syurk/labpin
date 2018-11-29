@@ -1,13 +1,12 @@
 from __future__ import absolute_import
 
-import warnings
-from importlib import import_module
-
 from django import forms
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
 from django.core import exceptions, validators
 from django.utils.translation import pgettext, ugettext, ugettext_lazy as _
+from importlib import import_module
+import warnings
 
 from . import app_settings
 from ..compat import reverse

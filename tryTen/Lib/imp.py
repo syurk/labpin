@@ -10,23 +10,24 @@ from _imp import (lock_held, acquire_lock, release_lock,
                   get_frozen_object, is_frozen_package,
                   init_frozen, is_builtin, is_frozen,
                   _fix_co_filename)
+from importlib import machinery
+from importlib import util
+import importlib
+from importlib._bootstrap import _ERR_MSG, _exec, _load, _builtin_from_name
+from importlib._bootstrap_external import SourcelessFileLoader
+import os
+import sys
+import tokenize
+import types
+import warnings
+
 try:
     from _imp import create_dynamic
 except ImportError:
     # Platform doesn't support dynamic loading.
     create_dynamic = None
 
-from importlib._bootstrap import _ERR_MSG, _exec, _load, _builtin_from_name
-from importlib._bootstrap_external import SourcelessFileLoader
 
-from importlib import machinery
-from importlib import util
-import importlib
-import os
-import sys
-import tokenize
-import types
-import warnings
 
 warnings.warn("the imp module is deprecated in favour of importlib; "
               "see the module's documentation for alternative uses",

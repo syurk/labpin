@@ -1,6 +1,7 @@
 __all__ = ['YADIS_HEADER_NAME', 'YADIS_CONTENT_TYPE', 'YADIS_ACCEPT_HEADER']
 from openid.yadis.accept import generateAcceptHeader
 
+
 YADIS_HEADER_NAME = 'X-XRDS-Location'
 YADIS_CONTENT_TYPE = 'application/xrds+xml'
 

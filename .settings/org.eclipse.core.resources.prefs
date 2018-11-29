@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/checkout/views.py=utf-8
+encoding//src/contact/models.py=utf-8
+encoding//src/contact/views.py=utf-8
+encoding//src/products/models.py=utf-8
+encoding//src/products/views.py=utf-8
+encoding//src/profiles/admin.py=utf-8
+encoding//src/profiles/models.py=utf-8
+encoding//src/profiles/views.py=utf-8

@@ -4,8 +4,9 @@
 Don't import directly from third-party code; use the `locale` module instead!
 """
 
-import sys
 import _locale
+import sys
+
 
 if sys.platform.startswith("win"):
     def getpreferredencoding(do_setlocale=True):

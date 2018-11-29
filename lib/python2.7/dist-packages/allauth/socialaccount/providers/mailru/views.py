@@ -1,11 +1,10 @@
-import requests
-from hashlib import md5
-
 from allauth.socialaccount.providers.oauth2.views import (
     OAuth2Adapter,
     OAuth2CallbackView,
     OAuth2LoginView,
 )
+from hashlib import md5
+import requests
 
 from .provider import MailRuProvider
 

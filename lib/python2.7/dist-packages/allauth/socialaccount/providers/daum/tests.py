@@ -1,7 +1,6 @@
-import json
-
 from allauth.socialaccount.tests import OAuth2TestsMixin
 from allauth.tests import MockedResponse, TestCase
+import json
 
 from .provider import DaumProvider
 

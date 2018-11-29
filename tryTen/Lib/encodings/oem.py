@@ -4,11 +4,11 @@
 # Import them explicitly to cause an ImportError
 # on non-Windows systems
 from codecs import oem_encode, oem_decode
-# for IncrementalDecoder, IncrementalEncoder, ...
 import codecs
 
-### Codec APIs
 
+# for IncrementalDecoder, IncrementalEncoder, ...
+### Codec APIs
 encode = oem_encode
 
 def decode(input, errors='strict'):

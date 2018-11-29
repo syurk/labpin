@@ -1,28 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django import forms
-from django.core.urlresolvers import reverse
-from django.forms.models import formset_factory, modelformset_factory
-try:
-    from django.middleware.csrf import _get_new_csrf_key
-except ImportError:
-    from django.middleware.csrf import _get_new_csrf_string as _get_new_csrf_key
-from django.shortcuts import render_to_response
-from django.template import (
-    Context, RequestContext
-)
-import pytest
-
-from django.test import RequestFactory
-from django.utils.translation import ugettext_lazy as _
-
-from .compatibility import get_template_from_string
-from .conftest import only_uni_form, only_bootstrap3, only_bootstrap4, only_bootstrap
-from .forms import (
-    TestForm, TestForm2, TestForm3, CheckboxesTestForm,
-    TestForm4, CrispyTestModel, TestForm5
-)
 from crispy_forms.bootstrap import InlineCheckboxes
 from crispy_forms.compatibility import PY2
 from crispy_forms.helper import FormHelper
@@ -31,6 +9,31 @@ from crispy_forms.layout import (
     Div, Submit
 )
 from crispy_forms.utils import render_crispy_form
+from django import forms
+from django.core.urlresolvers import reverse
+from django.forms.models import formset_factory, modelformset_factory
+from django.shortcuts import render_to_response
+from django.template import (
+    Context, RequestContext
+)
+from django.test import RequestFactory
+from django.utils.translation import ugettext_lazy as _
+import pytest
+
+from .compatibility import get_template_from_string
+from .conftest import only_uni_form, only_bootstrap3, only_bootstrap4, only_bootstrap
+from .forms import (
+    TestForm, TestForm2, TestForm3, CheckboxesTestForm,
+    TestForm4, CrispyTestModel, TestForm5
+)
+
+
+try:
+    from django.middleware.csrf import _get_new_csrf_key
+except ImportError:
+    from django.middleware.csrf import _get_new_csrf_string as _get_new_csrf_key
+
+
 
 
 def test_invalid_unicode_characters(settings):

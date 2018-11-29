@@ -18,8 +18,9 @@ __all__ = [
     ]
 
 from openid.extension import Extension
-import warnings
 import re
+import warnings
+
 
 ns_uri = "http://specs.openid.net/extensions/pape/1.0"
 

@@ -10,19 +10,22 @@ This module contains methods related to `Section 4`_ of the OAuth 2 RFC.
 from __future__ import absolute_import, unicode_literals
 
 import json
+from oauthlib.common import add_params_to_uri, add_params_to_qs, unicode_type
+from oauthlib.signals import scope_changed
 import os
 import time
+
+from .errors import InsecureTransportError
+from .errors import MismatchingStateError, MissingCodeError
+from .errors import raise_from_error, MissingTokenError, MissingTokenTypeError
+from .tokens import OAuth2Token
+from .utils import list_to_scope, scope_to_list, is_secure_transport
+
+
 try:
     import urlparse
 except ImportError:
     import urllib.parse as urlparse
-from oauthlib.common import add_params_to_uri, add_params_to_qs, unicode_type
-from oauthlib.signals import scope_changed
-from .errors import raise_from_error, MissingTokenError, MissingTokenTypeError
-from .errors import MismatchingStateError, MissingCodeError
-from .errors import InsecureTransportError
-from .tokens import OAuth2Token
-from .utils import list_to_scope, scope_to_list, is_secure_transport
 
 
 def prepare_grant_uri(uri, client_id, response_type, redirect_uri=None,

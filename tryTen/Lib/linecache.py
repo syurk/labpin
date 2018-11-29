@@ -6,9 +6,10 @@ that name.
 """
 
 import functools
-import sys
 import os
+import sys
 import tokenize
+
 
 __all__ = ["getline", "clearcache", "checkcache"]
 

@@ -8,9 +8,9 @@ for consuming and providing OAuth 2.0 RFC6749.
 """
 from __future__ import absolute_import, unicode_literals
 
-from .base import Client
-from ..parameters import prepare_grant_uri
 from ..parameters import parse_implicit_response
+from ..parameters import prepare_grant_uri
+from .base import Client
 
 
 class MobileApplicationClient(Client):

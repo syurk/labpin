@@ -14,6 +14,7 @@
 
 from sre_constants import *
 
+
 SPECIAL_CHARS = ".\\[{()*+?^$|"
 REPEAT_CHARS = "*+?{"
 

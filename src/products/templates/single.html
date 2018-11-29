@@ -87,7 +87,7 @@
 							<section class="container product-info">
                                     <!--{{ product.long_description }}-->
 								<h3>{{ product.name }} Features:</h3>
-								<li>{{ product.features|safe }}</li>
+								{{ product.features|safe }}
 							</section>
 										  
 						</div>
@@ -95,7 +95,7 @@
 						
 						<section class="container">
 								<h3>{{ product.name }} Information:</h3>
-								<li>{{ product.product_info|safe }}</li>
+								{{ product.product_info|safe }}
 						</section>
 						
 					</div>

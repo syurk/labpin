@@ -5,8 +5,8 @@ Written by Martin v. Löwis.
 
 import codecs
 
-##################### Encoding #####################################
 
+##################### Encoding #####################################
 def segregate(str):
     """3.1 Basic code point segregation"""
     base = bytearray()

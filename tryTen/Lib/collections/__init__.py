@@ -21,15 +21,16 @@ __all__ = ['deque', 'defaultdict', 'namedtuple', 'UserDict', 'UserList',
 # available through the collections module.
 from _collections_abc import *
 import _collections_abc
+from _weakref import proxy as _proxy
+import heapq as _heapq
+from itertools import repeat as _repeat, chain as _chain, starmap as _starmap
+from keyword import iskeyword as _iskeyword
+from operator import itemgetter as _itemgetter, eq as _eq
+from reprlib import recursive_repr as _recursive_repr
+import sys as _sys
+
 __all__ += _collections_abc.__all__
 
-from operator import itemgetter as _itemgetter, eq as _eq
-from keyword import iskeyword as _iskeyword
-import sys as _sys
-import heapq as _heapq
-from _weakref import proxy as _proxy
-from itertools import repeat as _repeat, chain as _chain, starmap as _starmap
-from reprlib import recursive_repr as _recursive_repr
 
 try:
     from _collections import deque

@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
-from django.core.mail import send_mail
 from django.conf import settings
+from django.core.mail import send_mail
+from django.shortcuts import render
 
 from .forms import contactForm
+
+
 # Create your views here.
 def contact(request):
     title = 'Contact'
@@ -16,7 +18,7 @@ def contact(request):
         name = form.cleaned_data['name']
         comment = form.cleaned_data['comment']
 
-        subject = 'Message from MYSITE.com'
+        subject = 'Labpin Contact'
         message = '%s %s' %(comment, name)
         emailFrom = form.cleaned_data['email']
         emailTo = [settings.EMAIL_HOST_USER]

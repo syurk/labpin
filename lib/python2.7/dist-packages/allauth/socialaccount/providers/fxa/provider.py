@@ -1,7 +1,6 @@
-from django.conf import settings
-
 from allauth.socialaccount.providers.base import ProviderAccount
 from allauth.socialaccount.providers.oauth2.provider import OAuth2Provider
+from django.conf import settings
 
 
 _FXA_SETTINGS = getattr(

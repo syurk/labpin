@@ -18,6 +18,7 @@ __all__ = [
 from openid.extension import Extension
 import re
 
+
 ns_uri = "http://specs.openid.net/extensions/pape/1.0"
 
 AUTH_MULTI_FACTOR_PHYSICAL = \

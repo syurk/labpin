@@ -1,12 +1,5 @@
 import base64
-import importlib
-import json
-import random
-import re
-import string
-import unicodedata
 from collections import OrderedDict
-
 from django.contrib.auth import get_user_model
 from django.contrib.sites.models import Site
 from django.core.exceptions import ImproperlyConfigured
@@ -22,6 +15,12 @@ from django.db.models.fields import (
 )
 from django.utils import dateparse, six
 from django.utils.six.moves.urllib.parse import urlsplit
+import importlib
+import json
+import random
+import re
+import string
+import unicodedata
 
 
 try:

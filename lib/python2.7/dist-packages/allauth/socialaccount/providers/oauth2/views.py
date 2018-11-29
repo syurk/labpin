@@ -1,12 +1,5 @@
 from __future__ import absolute_import
 
-from datetime import timedelta
-from requests import RequestException
-
-from django.core.exceptions import PermissionDenied
-from django.http import HttpResponseRedirect
-from django.utils import timezone
-
 from allauth.compat import reverse
 from allauth.exceptions import ImmediateHttpResponse
 from allauth.socialaccount import providers
@@ -21,6 +14,11 @@ from allauth.socialaccount.providers.oauth2.client import (
     OAuth2Error,
 )
 from allauth.utils import build_absolute_uri, get_request_param
+from datetime import timedelta
+from django.core.exceptions import PermissionDenied
+from django.http import HttpResponseRedirect
+from django.utils import timezone
+from requests import RequestException
 
 from ..base import AuthAction, AuthError
 

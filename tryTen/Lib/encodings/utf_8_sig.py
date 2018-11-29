@@ -9,8 +9,8 @@ This work similar to UTF-8 with the following changes:
 """
 import codecs
 
-### Codec APIs
 
+### Codec APIs
 def encode(input, errors='strict'):
     return (codecs.BOM_UTF8 + codecs.utf_8_encode(input, errors)[0],
             len(input))

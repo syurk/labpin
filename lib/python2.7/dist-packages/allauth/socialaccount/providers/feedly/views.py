@@ -1,13 +1,12 @@
 from __future__ import unicode_literals
 
-import requests
-
 from allauth.socialaccount import app_settings
 from allauth.socialaccount.providers.oauth2.views import (
     OAuth2Adapter,
     OAuth2CallbackView,
     OAuth2LoginView,
 )
+import requests
 
 from .provider import FeedlyProvider
 

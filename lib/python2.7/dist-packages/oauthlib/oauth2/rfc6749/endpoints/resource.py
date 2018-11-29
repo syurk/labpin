@@ -9,10 +9,10 @@ for consuming and providing OAuth 2.0 RFC6749.
 from __future__ import absolute_import, unicode_literals
 
 import logging
-
 from oauthlib.common import Request
 
 from .base import BaseEndpoint, catch_errors_and_unavailability
+
 
 log = logging.getLogger(__name__)
 

@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from allauth.account.signals import user_logged_in, user_signed_up
 from django.conf import settings
 from django.db import models
-from allauth.account.signals import user_logged_in, user_signed_up
 import stripe
+
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 class Profile(models.Model):
     name = models.CharField(max_length=120)
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, null=True, blank=True)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     description = models.TextField(default='Enter Description')
     '''
     location = models.CharField(max_length=120, default='Nairobi,Kenya',blank=True, null=True)
@@ -20,7 +21,7 @@ class Profile(models.Model):
         return self.name
 
 class userStripe(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     stripe_id = models.CharField(max_length=200, null= True, blank=True)
 
     def __unicode__(self):

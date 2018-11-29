@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from crispy_forms.exceptions import CrispyError
+from crispy_forms.templatetags.crispy_forms_field import crispy_addon
 from django.forms.forms import BoundField
 from django.forms.models import formset_factory
 from django.template import Context
-
 import pytest
 
 from .compatibility import get_template_from_string
 from .conftest import only_bootstrap
 from .forms import TestForm
-from crispy_forms.templatetags.crispy_forms_field import crispy_addon
-from crispy_forms.exceptions import CrispyError
 
 
 def test_as_crispy_errors_form_without_non_field_errors():

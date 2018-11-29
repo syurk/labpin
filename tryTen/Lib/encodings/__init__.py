@@ -30,7 +30,9 @@ Written by Marc-Andre Lemburg (mal@lemburg.com).
 
 import codecs
 import sys
+
 from . import aliases
+
 
 _cache = {}
 _unknown = '--unknown--'

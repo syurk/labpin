@@ -8,13 +8,12 @@ for consuming and providing OAuth 2.0 RFC6749.
 """
 from __future__ import absolute_import, unicode_literals
 
+from oauthlib.common import to_unicode
 import time
 
-from oauthlib.common import to_unicode
-
-from .base import Client
-from ..parameters import prepare_token_request
 from ..parameters import parse_token_response
+from ..parameters import prepare_token_request
+from .base import Client
 
 
 class ServiceApplicationClient(Client):

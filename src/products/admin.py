@@ -3,9 +3,10 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-# Register your models here.
 from .models import Product, Category, ProductImage
 
+
+# Register your models here.
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name','slug']
     prepopulated_fields = { 'slug': ('name',)}

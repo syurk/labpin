@@ -5,6 +5,7 @@ Code page 65001: Windows UTF-8 (CP_UTF8).
 import codecs
 import functools
 
+
 if not hasattr(codecs, 'code_page_encode'):
     raise LookupError("cp65001 encoding is only available on Windows")
 

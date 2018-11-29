@@ -1,6 +1,7 @@
 from django import template
 from products.models import Category
 
+
 register = template.Library()
 
 

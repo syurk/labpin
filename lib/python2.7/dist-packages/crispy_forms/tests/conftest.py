@@ -1,7 +1,6 @@
 # coding: utf-8
-import pytest
-
 from crispy_forms.layout import Layout, Div, Field, Submit, Fieldset, HTML
+import pytest
 
 
 only_uni_form = pytest.mark.only('uni_form')

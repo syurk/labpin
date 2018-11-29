@@ -1,6 +1,6 @@
 import json
-
 from oauthlib.common import to_unicode
+
 
 def mailchimp_compliance_fix(session):
     def _null_scope(r):

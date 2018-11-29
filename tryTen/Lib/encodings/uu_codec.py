@@ -7,12 +7,12 @@ adapted from uu.py which was written by Lance Ellinghouse and
 modified by Jack Jansen and Fredrik Lundh.
 """
 
-import codecs
 import binascii
+import codecs
 from io import BytesIO
 
-### Codec APIs
 
+### Codec APIs
 def uu_encode(input, errors='strict', filename='<data>', mode=0o666):
     assert errors == 'strict'
     infile = BytesIO(input)

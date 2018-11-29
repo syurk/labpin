@@ -6,10 +6,10 @@ Written by Marc-Andre Lemburg (mal@lemburg.com).
 """
 
 import codecs
-import zlib # this codec needs the optional zlib module !
+import zlib  # this codec needs the optional zlib module !
+
 
 ### Codec APIs
-
 def zlib_encode(input, errors='strict'):
     assert errors == 'strict'
     return (zlib.compress(input), len(input))

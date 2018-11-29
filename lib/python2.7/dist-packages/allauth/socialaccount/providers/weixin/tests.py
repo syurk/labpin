@@ -20,7 +20,7 @@ class WeixinTests(create_oauth2_tests(registry.by_id(WeixinProvider.id))):
  "headimgurl":
  "http://wx.qlogo.cn/mmopen/VkvLVEpoJiaibYsVyW8GzxHibzlnqSM7iaX09r6TWUJXCNQHibHz37krvN65HR1ibEpgH5K5sukcIzA3r1C4KQ9qyyX9XIUdY9lNOk/0",
  "language": "zh_CN",
- "nickname": "æŸæŸæŸ",
+ "nickname": "æŸ?æŸ?æŸ?",
  "openid": "ohS-VwAJ9GEXlplngwybJ3Z-ZHrI",
  "privilege": [],
  "province": "Shanghai",

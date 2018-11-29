@@ -1,5 +1,4 @@
 from json import loads, dumps
-
 from oauthlib.common import add_params_to_uri, to_unicode
 
 

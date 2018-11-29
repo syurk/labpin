@@ -5,7 +5,7 @@
 # to the functools module.
 # Written by Nick Coghlan <ncoghlan at gmail.com>,
 # Raymond Hettinger <python at rcn.com>,
-# and ≈Åukasz Langa <lukasz at langa.pl>.
+# and ≈?ukasz Langa <lukasz at langa.pl>.
 #   Copyright (C) 2006-2013 Python Software Foundation.
 # See C source code for _functools credits/copyright
 
@@ -19,9 +19,10 @@ except ImportError:
     pass
 from abc import get_cache_token
 from collections import namedtuple
+from reprlib import recursive_repr
 from types import MappingProxyType
 from weakref import WeakKeyDictionary
-from reprlib import recursive_repr
+
 try:
     from _thread import RLock
 except ImportError:

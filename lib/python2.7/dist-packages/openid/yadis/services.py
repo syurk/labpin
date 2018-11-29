@@ -1,8 +1,9 @@
 # -*- test-case-name: openid.test.test_services -*-
 
-from openid.yadis.filters import mkFilter
 from openid.yadis.discover import discover, DiscoveryFailure
 from openid.yadis.etxrd import parseXRDS, iterServices, XRDSError
+from openid.yadis.filters import mkFilter
+
 
 def getServiceEndpoints(input_url, flt=None):
     """Perform the Yadis protocol on the input URL and return an

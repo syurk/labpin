@@ -11,8 +11,8 @@
 
 import codecs
 
-### Codec APIs
 
+### Codec APIs
 class Codec(codecs.Codec):
 
     def encode(self,input,errors='strict'):

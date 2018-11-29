@@ -1,6 +1,7 @@
 from openid import cryptutil
 from openid import oidutil
 
+
 def strxor(x, y):
     if len(x) != len(y):
         raise ValueError('Inputs to strxor must have the same length')

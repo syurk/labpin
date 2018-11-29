@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.core.urlresolvers import reverse
+
 from django.db import models
+from django.urls import reverse
+
+
 #from filer.fields.image import FilerImageField
-
-
-
 # Create your models here.
-
 class Category(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=150)
@@ -27,7 +26,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey('Category',related_name='products')
+    category = models.ForeignKey('Category',on_delete=models.CASCADE,related_name='products')
     name = models.CharField(max_length=300)
     slug = models.SlugField(max_length=150)
     #images = models.ForeignKey(ProductImage)
@@ -65,7 +64,7 @@ class Product(models.Model):
 
 
 class ProductImage(models.Model):
-    product = models.ForeignKey(Product, related_name='images')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to='products_photos', default ="")
     featured = models.BooleanField(default=False)
 

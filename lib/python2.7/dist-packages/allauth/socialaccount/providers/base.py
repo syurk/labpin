@@ -1,7 +1,6 @@
-from django.utils.encoding import python_2_unicode_compatible
-
 from allauth.account.models import EmailAddress
 from allauth.socialaccount import app_settings
+from django.utils.encoding import python_2_unicode_compatible
 
 from ..adapter import get_adapter
 

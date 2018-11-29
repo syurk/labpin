@@ -6,8 +6,8 @@ Vista 6.0.6002 SP2 Multiprocessor Free with the command:
 
 import codecs
 
-### Codec APIs
 
+### Codec APIs
 class Codec(codecs.Codec):
 
     def encode(self,input,errors='strict'):

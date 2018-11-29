@@ -8,16 +8,15 @@ for signing and checking OAuth 1.0 RFC 5849 requests.
 """
 from __future__ import absolute_import, unicode_literals
 
+from oauthlib.common import Request, generate_token
 import time
 
-from oauthlib.common import Request, generate_token
-
-from .. import signature, utils, errors
 from .. import CONTENT_TYPE_FORM_URLENCODED
 from .. import SIGNATURE_HMAC, SIGNATURE_RSA
 from .. import SIGNATURE_TYPE_AUTH_HEADER
-from .. import SIGNATURE_TYPE_QUERY
 from .. import SIGNATURE_TYPE_BODY
+from .. import SIGNATURE_TYPE_QUERY
+from .. import signature, utils, errors
 
 
 class BaseEndpoint(object):

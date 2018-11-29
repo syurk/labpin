@@ -1,6 +1,4 @@
 from __future__ import unicode_literals
-import logging
-import sys
 
 import django
 from django.conf import settings
@@ -8,6 +6,8 @@ from django.forms.forms import BoundField
 from django.template import Context
 from django.template.loader import get_template
 from django.utils.html import conditional_escape
+import logging
+import sys
 
 from .base import KeepContext
 from .compatibility import lru_cache, text_type, PY2, SimpleLazyObject

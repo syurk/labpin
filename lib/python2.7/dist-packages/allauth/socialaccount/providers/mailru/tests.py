@@ -12,7 +12,7 @@ class MailRuTests(OAuth2TestsMixin, TestCase):
 
     def get_mocked_response(self, verified_email=True):
         return MockedResponse(200, """
-[ { "uid": "15410773191172635989", "first_name": "Евгений", "last_name": "Маслов", "nick": "maslov", "email": "emaslov@mail.ru", "sex": 0,  "birthday": "15.02.1980",  "has_pic": 1, "pic": "http://avt.appsmail.ru/mail/emaslov/_avatar",  "pic_small": "http://avt.appsmail.ru/mail/emaslov/_avatarsmall",  "pic_big": "http://avt.appsmail.ru/mail/emaslov/_avatarbig", "link": "http://my.mail.ru/mail/emaslov/", "referer_type": "", "referer_id": "", "is_online": 1, "friends_count": 145, "is_verified": 1, "vip" : 0, "app_installed": 1, "location": { "country": { "name": "Россия", "id": "24" }, "city": { "name": "Москва", "id": "25" }, "region": { "name": "Москва", "id": "999999" } } }]""")  # noqa
+[ { "uid": "15410773191172635989", "first_name": "Евгений", "last_name": "Ма�?лов", "nick": "maslov", "email": "emaslov@mail.ru", "sex": 0,  "birthday": "15.02.1980",  "has_pic": 1, "pic": "http://avt.appsmail.ru/mail/emaslov/_avatar",  "pic_small": "http://avt.appsmail.ru/mail/emaslov/_avatarsmall",  "pic_big": "http://avt.appsmail.ru/mail/emaslov/_avatarbig", "link": "http://my.mail.ru/mail/emaslov/", "referer_type": "", "referer_id": "", "is_online": 1, "friends_count": 145, "is_verified": 1, "vip" : 0, "app_installed": 1, "location": { "country": { "name": "Ро�?�?и�?", "id": "24" }, "city": { "name": "Мо�?ква", "id": "25" }, "region": { "name": "Мо�?ква", "id": "999999" } } }]""")  # noqa
 
     def get_login_response_json(self, with_refresh_token=True):
         # FIXME: This is not an actual response. I added this in order

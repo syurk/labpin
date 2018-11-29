@@ -9,13 +9,12 @@ Python 3.
 """
 
 import chardet
-
 import sys
+
 
 # -------
 # Pythons
 # -------
-
 # Syntax sugar.
 _ver = sys.version_info
 

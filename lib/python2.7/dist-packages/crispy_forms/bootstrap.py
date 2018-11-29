@@ -1,9 +1,9 @@
 from __future__ import unicode_literals
-from random import randint
 
 from django.template import Template
-from django.template.loader import render_to_string
 from django.template.defaultfilters import slugify
+from django.template.loader import render_to_string
+from random import randint
 
 from .compatibility import text_type
 from .layout import LayoutObject, Field, Div

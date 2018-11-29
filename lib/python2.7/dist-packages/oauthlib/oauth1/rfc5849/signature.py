@@ -26,13 +26,16 @@ from __future__ import absolute_import, unicode_literals
 import binascii
 import hashlib
 import hmac
+from oauthlib.common import bytes_type, unicode_type
+from oauthlib.common import urldecode, extract_params, safe_string_equals
+
+from . import utils
+
+
 try:
     import urlparse
 except ImportError:
     import urllib.parse as urlparse
-from . import utils
-from oauthlib.common import urldecode, extract_params, safe_string_equals
-from oauthlib.common import bytes_type, unicode_type
 
 
 def construct_base_string(http_method, base_string_uri,

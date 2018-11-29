@@ -1,8 +1,6 @@
-import requests
-
-from django.utils.http import urlencode
-
 from allauth.compat import parse_qsl
+from django.utils.http import urlencode
+import requests
 
 
 class OAuth2Error(Exception):

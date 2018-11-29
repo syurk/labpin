@@ -1,9 +1,8 @@
-import requests
-
 from allauth.socialaccount.providers.oauth2.client import (
     OAuth2Client,
     OAuth2Error,
 )
+import requests
 
 
 class UntappdOAuth2Client(OAuth2Client):

@@ -1,5 +1,3 @@
-import requests
-
 from allauth.socialaccount import app_settings
 from allauth.socialaccount.providers.github.provider import GitHubProvider
 from allauth.socialaccount.providers.oauth2.views import (
@@ -7,6 +5,7 @@ from allauth.socialaccount.providers.oauth2.views import (
     OAuth2CallbackView,
     OAuth2LoginView,
 )
+import requests
 
 
 class GitHubOAuth2Adapter(OAuth2Adapter):

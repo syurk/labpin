@@ -4,6 +4,7 @@
 
 from _weakref import ref
 
+
 __all__ = ['WeakSet']
 
 

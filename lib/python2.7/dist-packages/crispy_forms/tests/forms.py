@@ -1,8 +1,7 @@
-import django
-from django import forms
-from django.db import models
-
 from crispy_forms.helper import FormHelper
+from django import forms
+import django
+from django.db import models
 
 
 class TestForm(forms.Form):

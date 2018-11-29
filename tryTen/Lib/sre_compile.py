@@ -11,8 +11,9 @@
 """Internal support module for sre"""
 
 import _sre
-import sre_parse
 from sre_constants import *
+import sre_parse
+
 
 assert _sre.MAGIC == MAGIC, "SRE module mismatch"
 
@@ -32,11 +33,11 @@ _equivalences = (
     # COMBINING GREEK YPOGEGRAMMENI, GREEK SMALL LETTER IOTA, GREEK PROSGEGRAMMENI
     (0x345, 0x3b9, 0x1fbe), # \u0345ιι
     # GREEK SMALL LETTER IOTA WITH DIALYTIKA AND TONOS, GREEK SMALL LETTER IOTA WITH DIALYTIKA AND OXIA
-    (0x390, 0x1fd3), # ΐΐ
+    (0x390, 0x1fd3), # �?ΐ
     # GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND TONOS, GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND OXIA
     (0x3b0, 0x1fe3), # ΰΰ
     # GREEK SMALL LETTER BETA, GREEK BETA SYMBOL
-    (0x3b2, 0x3d0), # βϐ
+    (0x3b2, 0x3d0), # β�?
     # GREEK SMALL LETTER EPSILON, GREEK LUNATE EPSILON SYMBOL
     (0x3b5, 0x3f5), # εϵ
     # GREEK SMALL LETTER THETA, GREEK THETA SYMBOL
@@ -46,7 +47,7 @@ _equivalences = (
     # GREEK SMALL LETTER PI, GREEK PI SYMBOL
     (0x3c0, 0x3d6), # πϖ
     # GREEK SMALL LETTER RHO, GREEK RHO SYMBOL
-    (0x3c1, 0x3f1), # ρϱ
+    (0x3c1, 0x3f1), # �?ϱ
     # GREEK SMALL LETTER FINAL SIGMA, GREEK SMALL LETTER SIGMA
     (0x3c2, 0x3c3), # ςσ
     # GREEK SMALL LETTER PHI, GREEK PHI SYMBOL

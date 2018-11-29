@@ -1,8 +1,3 @@
-import json
-
-from django.test.client import RequestFactory
-from django.test.utils import override_settings
-
 from allauth.account import app_settings as account_settings
 from allauth.account.models import EmailAddress
 from allauth.compat import reverse
@@ -11,6 +6,9 @@ from allauth.socialaccount.models import SocialAccount
 from allauth.socialaccount.tests import OAuth2TestsMixin
 from allauth.tests import MockedResponse, TestCase, patch
 from allauth.utils import get_user_model
+from django.test.client import RequestFactory
+from django.test.utils import override_settings
+import json
 
 from .provider import FacebookProvider
 

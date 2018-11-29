@@ -1,22 +1,25 @@
 from __future__ import unicode_literals
 
-try:
-    from urlparse import urlparse
-except ImportError:
-    from urllib.parse import urlparse
-
 import logging
-
 from oauthlib.common import add_params_to_uri
 from oauthlib.common import urldecode as _urldecode
 from oauthlib.oauth1 import (
     SIGNATURE_HMAC, SIGNATURE_RSA, SIGNATURE_TYPE_AUTH_HEADER
 )
 import requests
+import sys
 
 from . import OAuth1
 
-import sys
+
+try:
+    from urlparse import urlparse
+except ImportError:
+    from urllib.parse import urlparse
+
+
+
+
 if sys.version > "3":
     unicode = str
 

@@ -36,14 +36,15 @@ __all__ = [
 
 # Imports.
 
+import errno as _errno
 import functools as _functools
-import warnings as _warnings
 import io as _io
 import os as _os
-import shutil as _shutil
-import errno as _errno
 from random import Random as _Random
+import shutil as _shutil
+import warnings as _warnings
 import weakref as _weakref
+
 
 try:
     import _thread

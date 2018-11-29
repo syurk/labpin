@@ -119,10 +119,12 @@ This module also defines an exception 'error'.
 
 """
 
+import copyreg
 import enum
+import functools
 import sre_compile
 import sre_parse
-import functools
+
 try:
     import _locale
 except ImportError:
@@ -333,7 +335,6 @@ def _subx(pattern, template):
 
 # register myself for pickling
 
-import copyreg
 
 def _pickle(p):
     return _compile, (p.pattern, p.flags)

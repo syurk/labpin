@@ -9,8 +9,8 @@ Written by Marc-Andre Lemburg (mal@lemburg.com).
 
 import builtins, sys
 
-### Registry and builtin stateless codec functions
 
+### Registry and builtin stateless codec functions
 try:
     from _codecs import *
 except ImportError as why:

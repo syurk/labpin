@@ -8,8 +8,8 @@ Written by Marc-Andre Lemburg (mal@lemburg.com).
 """
 import codecs
 
-### Codec APIs
 
+### Codec APIs
 class Codec(codecs.Codec):
 
     # Note: Binding these as C functions will result in the class not

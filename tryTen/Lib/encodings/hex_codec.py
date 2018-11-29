@@ -5,11 +5,11 @@ This codec de/encodes from bytes to bytes.
 Written by Marc-Andre Lemburg (mal@lemburg.com).
 """
 
-import codecs
 import binascii
+import codecs
+
 
 ### Codec APIs
-
 def hex_encode(input, errors='strict'):
     assert errors == 'strict'
     return (binascii.b2a_hex(input), len(input))

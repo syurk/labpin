@@ -7,6 +7,7 @@
 import _codecs_jp, codecs
 import _multibytecodec as mbc
 
+
 codec = _codecs_jp.getcodec('shift_jis')
 
 class Codec(codecs.Codec):

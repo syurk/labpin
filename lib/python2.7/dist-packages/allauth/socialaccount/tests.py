@@ -1,7 +1,3 @@
-import json
-import random
-import warnings
-
 from django.conf import settings
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.messages.middleware import MessageMiddleware
@@ -9,6 +5,9 @@ from django.contrib.sessions.middleware import SessionMiddleware
 from django.contrib.sites.models import Site
 from django.test.client import RequestFactory
 from django.test.utils import override_settings
+import json
+import random
+import warnings
 
 from . import providers
 from ..account import app_settings as account_settings

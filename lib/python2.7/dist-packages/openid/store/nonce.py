@@ -4,10 +4,11 @@ __all__ = [
     'checkTimestamp',
     ]
 
-from openid import cryptutil
-from time import strptime, strftime, gmtime, time
 from calendar import timegm
+from openid import cryptutil
 import string
+from time import strptime, strftime, gmtime, time
+
 
 NONCE_CHARS = string.ascii_letters + string.digits
 

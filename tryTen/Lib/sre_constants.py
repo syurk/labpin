@@ -17,9 +17,9 @@ MAGIC = 20140917
 
 from _sre import MAXREPEAT, MAXGROUPS
 
+
 # SRE standard exception (access as sre.error)
 # should this really be here?
-
 class error(Exception):
     """Exception raised for invalid regular expressions.
 

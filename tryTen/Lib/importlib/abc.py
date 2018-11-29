@@ -1,7 +1,10 @@
 """Abstract base classes related to import."""
+import abc
+
 from . import _bootstrap
 from . import _bootstrap_external
 from . import machinery
+
 try:
     import _frozen_importlib
 except ImportError as exc:
@@ -12,7 +15,6 @@ try:
     import _frozen_importlib_external
 except ImportError as exc:
     _frozen_importlib_external = _bootstrap_external
-import abc
 
 
 def _register(abstract_cls, *classes):

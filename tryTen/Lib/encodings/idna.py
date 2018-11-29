@@ -3,6 +3,7 @@
 import stringprep, re, codecs
 from unicodedata import ucd_3_2_0 as unicodedata
 
+
 # IDNA section 3.1
 dots = re.compile("[\u002E\u3002\uFF0E\uFF61]")
 

@@ -14,9 +14,9 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
       <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+        <h1>Welcome to Labpin!</h1>
+        <p>We are a small startup that retails lab equipment. If you would like to learn more about us, please visit our About page.  </p>
+        <p><a class="btn btn-primary btn-lg" href="{% url 'about' %}" role="button">Learn more »</a></p>
       </div>
     </div>
 {% endblock %}
@@ -24,32 +24,10 @@
 {% block content %}
 <div class="row">
         <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+         </div>
+        <div class="col-md-4">
+          <a href="#"><img src="{% static 'img/LabpinLogoTransparent.png' %}" class= 'img-responsive'/></a>
         </div>
         <div class="col-md-4">
-          <a href="#"><img src="{% static 'img/home.png' %}" class= 'img-responsive'/></a>
-        </div>
-        <div class="col-md-4">
-          {% if request.user.is_authenticated %}
-          <h3> Hello {{ request.user}}</h3>
-
-          {% else %}
-          <form class="login" method="POST" action="{% url 'account_login' %}">
-          {% csrf_token %}
-
-<div id="div_id_login" class="form-group"> <label for="id_login" class="control-label  requiredField">
-                Login<span class="asteriskField">*</span> </label> <div class="controls "> <input name="login" autofocus="autofocus" required="" placeholder="Username or e-mail" class="textinput textInput form-control" id="id_login" type="text"> </div> </div> <div id="div_id_password" class="form-group"> <label for="id_password" class="control-label  requiredField">
-                Password<span class="asteriskField">*</span> </label> <div class="controls "> <input name="password" required="" placeholder="Password" class="textinput textInput form-control" id="id_password" type="password"> </div> </div> <div class="form-group"> <div id="div_id_remember" class="checkbox"> <label for="id_remember" class=""> <input name="remember" class="checkboxinput" id="id_remember" type="checkbox">
-                    Remember Me
-                </label> </div> </div>
-
-  
-  <a class="btn btn-link button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
-   <a class="btn btn-link button secondaryAction" href="{% url 'account_signup' %}">Sign Up</a>
-  <button class="btn btn-default primaryAction" type="submit">Sign In</button>
-</form>
-{% endif %}
-      </div>
+          </div>
 {% endblock %}

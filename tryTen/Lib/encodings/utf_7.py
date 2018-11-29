@@ -4,8 +4,8 @@ Written by Brian Quinlan (brian@sweetapp.com).
 """
 import codecs
 
-### Codec APIs
 
+### Codec APIs
 encode = codecs.utf_7_encode
 
 def decode(input, errors='strict'):

@@ -7,12 +7,18 @@ This module is an implementation of various logic needed
 for signing and checking OAuth 1.0 RFC 5849 requests.
 """
 from __future__ import absolute_import, unicode_literals
+
 import base64
 import hashlib
 import logging
+from oauthlib.common import Request, urlencode, generate_nonce
+from oauthlib.common import generate_timestamp, to_unicode
+import sys
+
+from . import parameters, signature
+
 log = logging.getLogger(__name__)
 
-import sys
 try:
     import urlparse
 except ImportError:
@@ -23,9 +29,6 @@ if sys.version_info[0] == 3:
 else:
     bytes_type = str
 
-from oauthlib.common import Request, urlencode, generate_nonce
-from oauthlib.common import generate_timestamp, to_unicode
-from . import parameters, signature
 
 SIGNATURE_HMAC = "HMAC-SHA1"
 SIGNATURE_RSA = "RSA-SHA1"

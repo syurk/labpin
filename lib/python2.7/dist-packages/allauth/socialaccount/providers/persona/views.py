@@ -1,13 +1,11 @@
-import requests
-
-from django.core.exceptions import ImproperlyConfigured
-
 from allauth.socialaccount import app_settings, providers
 from allauth.socialaccount.helpers import (
     complete_social_login,
     render_authentication_error,
 )
 from allauth.socialaccount.models import SocialLogin
+from django.core.exceptions import ImproperlyConfigured
+import requests
 
 from .provider import PersonaProvider
 

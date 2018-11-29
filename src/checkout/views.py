@@ -2,15 +2,13 @@
 from __future__ import unicode_literals
 
 from django.contrib.auth.decorators import login_required
-
 from django.shortcuts import render
-
+from products.models import Product
+import stripe
 from tryTen import settings
 
-import stripe
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
-from products.models import Product
 
 # Create your views here.
 stripe.api_key = settings.STRIPE_SECRET_KEY

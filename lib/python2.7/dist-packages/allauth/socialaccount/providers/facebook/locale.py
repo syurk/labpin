@@ -1,9 +1,8 @@
 # Default locale mapping for the Facebook JS SDK
 # The list of supported locales is at
 # https://www.facebook.com/translations/FacebookLocales.xml
-import os
-
 from django.utils.translation import get_language, to_locale
+import os
 
 
 def _build_locale_table(filename_or_file):

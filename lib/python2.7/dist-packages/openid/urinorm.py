@@ -1,5 +1,6 @@
 import re
 
+
 # from appendix B of rfc 3986 (http://www.ietf.org/rfc/rfc3986.txt)
 uri_pattern = r'^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?'
 uri_re = re.compile(uri_pattern)

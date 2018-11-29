@@ -2,9 +2,9 @@ __all__ = ['findHTMLMeta', 'MetaNotFound']
 
 from HTMLParser import HTMLParser, HTMLParseError
 import htmlentitydefs
+from openid.yadis.constants import YADIS_HEADER_NAME
 import re
 
-from openid.yadis.constants import YADIS_HEADER_NAME
 
 # Size of the chunks to search at a time (also the amount that gets
 # read at a time)

@@ -16,11 +16,10 @@ If no paths are provided, it takes its input from stdin.
 from __future__ import absolute_import, print_function, unicode_literals
 
 import argparse
-import sys
-
 from chardet import __version__
 from chardet.compat import PY2
 from chardet.universaldetector import UniversalDetector
+import sys
 
 
 def description_of(lines, name='stdin'):

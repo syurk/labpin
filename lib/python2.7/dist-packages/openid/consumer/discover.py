@@ -13,19 +13,19 @@ __all__ = [
     'discover',
     ]
 
-import urlparse
-
 from openid import oidutil, fetchers, urinorm
-
 from openid import yadis
+from openid.consumer import html_parse
+from openid.message import OPENID1_NS as OPENID_1_0_MESSAGE_NS
+from openid.message import OPENID2_NS as OPENID_2_0_MESSAGE_NS
+from openid.yadis import xri
+from openid.yadis import xrires, filters
+from openid.yadis.discover import DiscoveryFailure
+from openid.yadis.discover import discover as yadisDiscover
 from openid.yadis.etxrd import nsTag, XRDSError, XRD_NS_2_0
 from openid.yadis.services import applyFilter as extractServices
-from openid.yadis.discover import discover as yadisDiscover
-from openid.yadis.discover import DiscoveryFailure
-from openid.yadis import xrires, filters
-from openid.yadis import xri
+import urlparse
 
-from openid.consumer import html_parse
 
 OPENID_1_0_NS = 'http://openid.net/xmlns/1.0'
 OPENID_IDP_2_0_TYPE = 'http://specs.openid.net/auth/2.0/server'
@@ -33,8 +33,6 @@ OPENID_2_0_TYPE = 'http://specs.openid.net/auth/2.0/signon'
 OPENID_1_1_TYPE = 'http://openid.net/signon/1.1'
 OPENID_1_0_TYPE = 'http://openid.net/signon/1.0'
 
-from openid.message import OPENID1_NS as OPENID_1_0_MESSAGE_NS
-from openid.message import OPENID2_NS as OPENID_2_0_MESSAGE_NS
 
 class OpenIDServiceEndpoint(object):
     """Object representing an OpenID service endpoint.

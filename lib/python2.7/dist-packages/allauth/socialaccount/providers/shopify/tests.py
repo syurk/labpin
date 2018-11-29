@@ -1,12 +1,10 @@
-import json
-
-from django.test.utils import override_settings
-
 from allauth.compat import parse_qs, reverse, urlparse
 from allauth.socialaccount.models import SocialAccount
 from allauth.socialaccount.providers import registry
 from allauth.socialaccount.tests import create_oauth2_tests
 from allauth.tests import MockedResponse, mocked_response
+from django.test.utils import override_settings
+import json
 
 from .provider import ShopifyProvider
 

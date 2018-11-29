@@ -5,13 +5,14 @@
 # events have occurred rather than retry the syscall. The decision to drop
 # support for select.devpoll is made to maintain 100% test coverage.
 
+from collections import namedtuple, Mapping
 import errno
 import math
 import select
 import socket
 import sys
 import time
-from collections import namedtuple, Mapping
+
 
 try:
     monotonic = time.monotonic

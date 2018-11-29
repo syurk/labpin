@@ -5,6 +5,7 @@ from django.shortcuts import render
 
 from .models import Product, ProductImage
 
+
 # Create your views here.
 def all(request):
     product = Product.objects.all()

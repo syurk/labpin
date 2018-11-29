@@ -27,10 +27,10 @@ __all__ = [
     ]
 
 import hmac
+from openid.oidutil import toBase64, fromBase64
 import os
 import random
 
-from openid.oidutil import toBase64, fromBase64
 
 try:
     import hashlib

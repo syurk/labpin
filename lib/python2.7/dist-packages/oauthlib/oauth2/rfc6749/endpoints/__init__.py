@@ -9,11 +9,13 @@ for consuming and providing OAuth 2.0 RFC6749.
 from __future__ import absolute_import, unicode_literals
 
 from .authorization import AuthorizationEndpoint
-from .token import TokenEndpoint
-from .resource import ResourceEndpoint
-from .revocation import RevocationEndpoint
+from .pre_configured import BackendApplicationServer
+from .pre_configured import LegacyApplicationServer
+from .pre_configured import MobileApplicationServer
 from .pre_configured import Server
 from .pre_configured import WebApplicationServer
-from .pre_configured import MobileApplicationServer
-from .pre_configured import LegacyApplicationServer
-from .pre_configured import BackendApplicationServer
+from .resource import ResourceEndpoint
+from .revocation import RevocationEndpoint
+from .token import TokenEndpoint
+
+

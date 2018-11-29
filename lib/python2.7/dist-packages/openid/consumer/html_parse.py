@@ -71,6 +71,7 @@ __all__ = ['parseLinkAttrs']
 
 import re
 
+
 flags = ( re.DOTALL # Match newlines with '.'
         | re.IGNORECASE
         | re.VERBOSE # Allow comments and whitespace in patterns

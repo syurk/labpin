@@ -1,6 +1,5 @@
-from django.conf.urls import include, url
-
 from allauth.utils import import_attribute
+from django.conf.urls import include, url
 
 
 def default_urlpatterns(provider):

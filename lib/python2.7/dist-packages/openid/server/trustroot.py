@@ -20,9 +20,9 @@ __all__ = [
 from openid import oidutil
 from openid import urinorm
 from openid.yadis import services
-
-from urlparse import urlparse, urlunparse
 import re
+from urlparse import urlparse, urlunparse
+
 
 ############################################
 _protocols = ['http', 'https']

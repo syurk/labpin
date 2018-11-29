@@ -1,0 +1,1 @@
+pip install stripe, django-allauth, django-crispy-forms, dj-stripe, Pillow

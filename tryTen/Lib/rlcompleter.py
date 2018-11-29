@@ -29,9 +29,10 @@ Notes:
 
 """
 
+import __main__
 import atexit
 import builtins
-import __main__
+
 
 __all__ = ["Completer"]
 

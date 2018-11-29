@@ -7,12 +7,12 @@ from __future__ import unicode_literals, absolute_import
 
 import json
 import logging
-
 from oauthlib import common
 from oauthlib.uri_validate import is_absolute_uri
 
-from .base import GrantTypeBase
 from .. import errors
+from .base import GrantTypeBase
+
 
 log = logging.getLogger(__name__)
 

@@ -1,9 +1,8 @@
-from django.core.management.base import BaseCommand
-from django.db.models import Count
-
 from allauth.account.models import EmailAddress
 from allauth.account.utils import user_email
 from allauth.utils import get_user_model
+from django.core.management.base import BaseCommand
+from django.db.models import Count
 
 
 class Command(BaseCommand):

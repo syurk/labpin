@@ -22,9 +22,13 @@ and opendir), and leave all pathname manipulation to os.path
 """
 
 #'
+from _collections_abc import MutableMapping
 import abc
-import sys, errno
+from os.path import (curdir, pardir, sep, pathsep, defpath, extsep, altsep,
+    devnull)
 import stat as st
+import sys, errno
+
 
 _names = sys.builtin_module_names
 
@@ -89,8 +93,6 @@ else:
     raise ImportError('no os specific module found')
 
 sys.modules['os.path'] = path
-from os.path import (curdir, pardir, sep, pathsep, defpath, extsep, altsep,
-    devnull)
 
 del _names
 
@@ -649,7 +651,6 @@ def get_exec_path(env=None):
 
 
 # Change environ to automatically call putenv(), unsetenv if they exist.
-from _collections_abc import MutableMapping
 
 class _Environ(MutableMapping):
     def __init__(self, data, encodekey, decodekey, encodevalue, decodevalue, putenv, unsetenv):

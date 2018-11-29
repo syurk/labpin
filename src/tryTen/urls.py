@@ -13,19 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
-from django.contrib import admin
-
-from profiles import views as profile_views
-from contact import views as contact_views
 from checkout import views as checkout_views
-from products import views as product_views
-from shopping import views as shopping_views
-from shopping import urls
-
+from contact import views as contact_views
 from django.conf import settings
+from django.conf.urls import url, include
 from django.conf.urls.static import static
-
+from django.contrib import admin
+from products import views as product_views
+from profiles import views as profile_views
+from shopping import urls
+from shopping import views as shopping_views
 
 
 urlpatterns = [

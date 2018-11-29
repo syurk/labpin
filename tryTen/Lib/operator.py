@@ -23,7 +23,6 @@ from builtins import abs as _abs
 
 
 # Comparison Operations *******************************************************#
-
 def lt(a, b):
     "Same as a < b."
     return a < b

@@ -1,13 +1,18 @@
 from __future__ import absolute_import
+
 import errno
 import logging
+from socket import error as SocketError, timeout as SocketTimeout
+import socket
 import sys
 import warnings
 
-from socket import error as SocketError, timeout as SocketTimeout
-import socket
-
-
+from .connection import (
+    port_by_scheme,
+    DummyConnection,
+    HTTPConnection, HTTPSConnection, VerifiedHTTPSConnection,
+    HTTPException, BaseSSLError,
+)
 from .exceptions import (
     ClosedPoolError,
     ProtocolError,
@@ -23,18 +28,11 @@ from .exceptions import (
     InsecureRequestWarning,
     NewConnectionError,
 )
-from .packages.ssl_match_hostname import CertificateError
 from .packages import six
 from .packages.six.moves import queue
-from .connection import (
-    port_by_scheme,
-    DummyConnection,
-    HTTPConnection, HTTPSConnection, VerifiedHTTPSConnection,
-    HTTPException, BaseSSLError,
-)
+from .packages.ssl_match_hostname import CertificateError
 from .request import RequestMethods
 from .response import HTTPResponse
-
 from .util.connection import is_connection_dropped
 from .util.request import set_file_position
 from .util.response import assert_header_parsing

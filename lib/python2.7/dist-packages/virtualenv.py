@@ -1,8 +1,26 @@
 #!/usr/bin/env python
 """Create a "virtual" Python installation"""
 
+import base64
+import codecs
+import distutils.sysconfig
+from distutils.util import strtobool
+import errno
+import glob
+import logging
+import optparse
 import os
+from os.path import join
+import pkgutil
+import re
+import shutil
+import struct
+import subprocess
 import sys
+import tempfile
+import textwrap
+import zlib
+
 
 # If we are running in a new interpreter to create a virtualenv,
 # we do NOT want paths from our existing location interfering with anything,
@@ -13,23 +31,6 @@ if os.environ.get('VIRTUALENV_INTERPRETER_RUNNING'):
         if os.path.realpath(os.path.dirname(__file__)) == os.path.realpath(path):
             sys.path.remove(path)
 
-import base64
-import codecs
-import optparse
-import re
-import shutil
-import logging
-import zlib
-import errno
-import glob
-import distutils.sysconfig
-import struct
-import subprocess
-import pkgutil
-import tempfile
-import textwrap
-from distutils.util import strtobool
-from os.path import join
 
 try:
     import ConfigParser

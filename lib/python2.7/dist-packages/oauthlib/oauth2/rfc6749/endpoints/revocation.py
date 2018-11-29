@@ -10,12 +10,12 @@ An implementation of the OAuth 2 `Token Revocation`_ spec (draft 11).
 from __future__ import absolute_import, unicode_literals
 
 import logging
-
 from oauthlib.common import Request
 
-from .base import BaseEndpoint, catch_errors_and_unavailability
 from ..errors import InvalidClientError, UnsupportedTokenTypeError
 from ..errors import InvalidRequestError, OAuth2Error
+from .base import BaseEndpoint, catch_errors_and_unavailability
+
 
 log = logging.getLogger(__name__)
 

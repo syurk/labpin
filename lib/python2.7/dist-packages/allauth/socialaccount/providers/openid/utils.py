@@ -1,12 +1,10 @@
+from allauth.utils import valid_email_or_none
 import base64
-import pickle
-
 from openid.association import Association as OIDAssociation
 from openid.extensions.ax import FetchResponse
 from openid.extensions.sreg import SRegResponse
 from openid.store.interface import OpenIDStore as OIDStore
-
-from allauth.utils import valid_email_or_none
+import pickle
 
 from .models import OpenIDNonce, OpenIDStore
 

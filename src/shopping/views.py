@@ -1,11 +1,10 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
-# Create your views here.
-from django.http import HttpResponse
 
+# Create your views here.
 #from carton.cart import Cart
 #from products.models import Product
-
 #def add(request):
 #    cart = Cart(request.session)
 #    product = Product.objects.get(id=request.GET.get('product_id'))

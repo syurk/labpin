@@ -11,6 +11,11 @@ __all__ = ['__import__', 'import_module', 'invalidate_caches', 'reload']
 # initialised below if the frozen one is not available).
 import _imp  # Just the builtin component, NOT the full Python module
 import sys
+import types
+import warnings
+
+from ._bootstrap import __import__
+
 
 try:
     import _frozen_importlib as _bootstrap
@@ -54,13 +59,10 @@ _r_long = _bootstrap_external._r_long
 # Fully bootstrapped at this point, import whatever you like, circular
 # dependencies and startup overhead minimisation permitting :)
 
-import types
-import warnings
 
 
 # Public API #########################################################
 
-from ._bootstrap import __import__
 
 
 def invalidate_caches():

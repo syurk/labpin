@@ -4,6 +4,7 @@ __all__ = ["Repr", "repr", "recursive_repr"]
 
 import builtins
 from itertools import islice
+
 try:
     from _thread import get_ident
 except ImportError:

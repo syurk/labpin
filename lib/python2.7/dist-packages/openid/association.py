@@ -32,12 +32,12 @@ __all__ = [
     'Association',
     ]
 
-import time
-
 from openid import cryptutil
 from openid import kvform
 from openid import oidutil
 from openid.message import OPENID_NS
+import time
+
 
 all_association_types = [
     'HMAC-SHA1',

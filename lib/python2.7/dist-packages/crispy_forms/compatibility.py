@@ -1,6 +1,6 @@
+from django.utils.functional import SimpleLazyObject
 import sys
 
-from django.utils.functional import SimpleLazyObject
 
 try:
     basestring

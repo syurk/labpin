@@ -1,9 +1,9 @@
 """A simple store using only in-process memory."""
 
-from openid.store import nonce
-
 import copy
+from openid.store import nonce
 import time
+
 
 class ServerAssocs(object):
     def __init__(self):
